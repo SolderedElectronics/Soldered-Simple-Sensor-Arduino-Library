@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['native_0',['native',['../class_easy_c.html#abb766b60f26778dbc64e8792fd754729',1,'EasyC']]]
+  ['highpercentage_0',['highPercentage',['../classsimple_sensor.html#ad77bb78b8628904c9f27dcb08ba6f6bd',1,'simpleSensor']]]
 ];
