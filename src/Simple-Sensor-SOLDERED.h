@@ -20,16 +20,16 @@
  * This is used to auto-set the ADC's width in bits so correct measurements can be made.
  */
 #ifdef ESP32 // Dasduino ConnectPlus
-#define ADC_MAX     4096
+#define ADC_MAX 4096
 #elif ESP8266 // Dasduino Connect
-#define ADC_MAX     1024
+#define ADC_MAX 1024
 #else // Dasduino Core and other boards
-#define ADC_MAX     1024
+#define ADC_MAX 1024
 #endif
 
 /**
  * Resistance constant
-*/
+ */
 #define R 10000
 
 /**
@@ -67,7 +67,7 @@ class simpleSensor : public EasyC
   private:
     uint8_t analogPin, digitalPin;
     uint8_t rawReadData;
-    uint16_t rawThreshold = ADC_MAX/2; // Default threshold is 50%
+    uint16_t rawThreshold = ADC_MAX / 2; // Default threshold is 50%
     uint8_t adcWidthInBits;
     float adcMaxVoltage;
     float highPercentage = 100.0; // Used for calibration
