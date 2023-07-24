@@ -92,6 +92,7 @@ public:
     int readData(char a[], int n)
     {
         Wire.requestFrom(address, n);
+        delay(5);
         Wire.readBytes(a, n);
 
         return 0;
