@@ -53,6 +53,8 @@ public:
 
         Wire.begin();
 
+        
+
         beginDone = 1;
     }
 

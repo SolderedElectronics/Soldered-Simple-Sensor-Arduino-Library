@@ -21,8 +21,8 @@
 
 // Define pins to use for A0 and D0
 // Make sure to change these so it suits your board
-#define SENSOR_A0_PIN 35
-#define SENSOR_D0_PIN 34
+#define SENSOR_A0_PIN A2
+#define SENSOR_D0_PIN 7
 
 /**
  * Connecting diagram:
@@ -46,7 +46,7 @@
  * You can use the function getValue() to get that percentage.
  * 
  * 0.00% represents no shorted contacts, so, no rain at all.
- * 100.0% represents fully shorted contacts - the board is fully wet, so, rain is detected.
+ * 100.00% represents fully shorted contacts - the board is fully wet, so, rain is detected.
  * 
  * You may also use isRaining to get a simple digital reading - is it raining or not?
  * The threshold of this reading is adjusted by the small potentiometer on the board.

@@ -45,8 +45,8 @@
  * 
  * You can use the function getValue() to get that percentage.
  * 
- * 0.00% represents no shorted contacts, so, no rain at all.
- * 100.0% represents fully shorted contacts - the board is fully wet, so, rain is detected.
+ * 0.00% represents no shorted contacts, so, dry soil.
+ * 100.00% represents fully shorted contacts - the sensor is fully wet, so, the soil is moist.
  * 
  * You may also use isRaining to get a simple digital reading - is it raining or not?
  * The threshold of this reading is adjusted by the small potentiometer on the board.
@@ -83,7 +83,7 @@ void loop()
     // The resistance is calcualted through a constant
     Serial.print("Resistance: ");
     Serial.print(soilSensor.getResistance());
-    Serial.println("Ohm.");
+    Serial.println(" Ohm.");
 
     // Print percentage of 'wetness' of sensor
     Serial.print("Moist percentage: ");
@@ -100,3 +100,4 @@ void loop()
 
     delay(1000); // Wait a bit until the next reading
 }
+ 

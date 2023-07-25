@@ -1,15 +1,15 @@
 /**
  **************************************************
  *
- * @file        simpleSoilHumiditySensor_easyC.ino
- * @brief       Read all the values of the Simple Soil Humidity Sensor, easyC version.
+ * @file        simpleFireSensor_native.ino
+ * @brief       Read all the values of the Simple Fire Sensor, easyC version.
  *              Also, see how to calibrate it!
  * 
  *              To successfully run the sketch:
- *              -Connect the breakout to your Dasduino board via easyC
+ *              -Connect the breakout to your Dasduino board according to the diagrams below
  *              -Open Serial monitor at 115200 baud!
  *
- *              Simple Soil Sensor easyC: solde.red/333040
+ *              Simple Fire Sensor easyC: solde.red/333042
  *              Dasduino Core: www.solde.red/333037
  *              Dasduino Connect: www.solde.red/333034
  *              Dasduino ConnectPlus: www.solde.red/333033
@@ -17,21 +17,20 @@
  * @authors     Robert Sorić @ soldered.com
  ***************************************************/
 
-#include "Simple-Soil-Sensor-SOLDERED.h" // Include the required library
+#include "Simple-Fire-Sensor-SOLDERED.h" // Include the required library
 
 /**
  * How it works:
  * 
- * This sensor works on the principle that humidity will short electrical
- * contacts on the board of the Soil Humidity sensor, thus, lowering the resistance.
- * Through this, a percentage can be calculated which indicates moistness of the soil.
+ * This sensor works on the principle that the IR LED will react to IR rays produced by a fire.
+ * The response of the IR LED will be reflected in a percentage.
  * 
  * You can use the function getValue() to get that percentage.
  * 
- * 0.00% represents no shorted contacts, so, dry soil.
- * 100.00% represents fully shorted contacts - the sensor is fully wet, so, the soil is moist.
+ * 0.00% represents no IR light affecting the sensor, so no fire.
+ * 100.00% reporesents a strong IR light affecting the sensor, so there's a fire.
  * 
- * You may also use isMoist to get a simple digital reading - is the soil moist or not?
+ * You may also use isFireDetected to get a simple digital reading - is there a fire or not?
  * The threshold of this reading is adjusted by the setThreshold function.
  * 
  * The LED on the board will turn on if the threshold is reached.
@@ -39,16 +38,16 @@
 */
 
 // Create the sensor object
-simpleSoilSensor soilSensor;
+simpleFireSensor fireSensor;
 
 void setup()
 {
     Serial.begin(115200); // Begin Serial communication so we can see the output
     
-    soilSensor.begin(); // Init the Simple Soil Humidity Sensor
+    fireSensor.begin(); // Init the Simple Fire Sensor
 
     // If you're starting the sensor on a different address, use this constructor
-    //soilSensor.begin(0x32);
+    //fireSensor.begin(0x32);
 
     // The default address is 0x30
     // You may change the address via the switches on the front of the board
@@ -64,19 +63,19 @@ void setup()
     // 0x36    | x | x |   |
     // 0x37    | x | x | x |
 
-    // Set the threshold for reading is the soil humid or not
-    soilSensor.setThreshold(35.5);
+    // Set the threshold for reading is a fire detected or not
+    fireSensor.setThreshold(35.5);
 
     // Sensor calibration isn't needed but it helps with getting more relevant readings.
     // To calibrate the sensor, first run this sketch with the line of code below commented:
-    //soilSensor.calibrate(67.5);
+    //fireSensor.calibrate(65.5);
 
-    // Place the sensor in water- so it's as moist as you're ever going to want to measure.
-    // Note the reading of the Moist percentage, and then write that value in the calibrate function.
+    // Place the sensor in front of a fire.
+    // Note the reading of the Fire detection percentage, and then write that value in the calibrate function.
     // What this does is essentially make the range of measurement smaller so the data you get is more relevant.
 
     // Optionally, Invert the LED on the board
-    //soilSensor.invertLED(true);
+    //fireSensor.invertLED(false);
 }
 
 void loop()
@@ -85,26 +84,25 @@ void loop()
 
     // Raw reading is essentially a reading of the analog value on the easyC board
     Serial.print("Raw reading: ");
-    Serial.println(soilSensor.getRawReading());
+    Serial.println(fireSensor.getRawReading());
     
     // The resistance is calcualted through a constant
     Serial.print("Resistance: ");
-    Serial.print(soilSensor.getResistance());
+    Serial.print(fireSensor.getResistance());
     Serial.println(" Ohm.");
 
-    // Print percentage of 'moistness' of sensor
-    Serial.print("Moist percentage: ");
-    Serial.print(soilSensor.getValue());
+    // Print percentage of the fire detection of sensor
+    Serial.print("Fire detection: ");
+    Serial.print(fireSensor.getValue());
     Serial.println("%");
 
-    // Print is the soil moist or not
-    // Once again, you may adjust this threshold with setThreshold
-    Serial.print("Is the soil moist? ");
-    if(soilSensor.isMoist()) Serial.println("True!");
+    // Print is a fire detected or not
+    // Once again, you may adjust this threshold with the small potentiometer on the board
+    Serial.print("Is there a fire detected? ");
+    if(fireSensor.isFireDetected()) Serial.println("True!");
     else Serial.println("False!");
 
     Serial.println(); // Print newline
 
     delay(1000); // Wait a bit until the next reading
 }
- 
