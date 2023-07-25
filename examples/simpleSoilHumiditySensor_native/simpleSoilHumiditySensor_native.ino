@@ -21,7 +21,7 @@
 
 // Define pins to use for A0 and D0
 // Make sure to change these so it suits your board
-#define SENSOR_A0_PIN A2
+#define SENSOR_A0_PIN 12
 #define SENSOR_D0_PIN 7
 
 /**
@@ -48,7 +48,7 @@
  * 0.00% represents no shorted contacts, so, dry soil.
  * 100.00% represents fully shorted contacts - the sensor is fully wet, so, the soil is moist.
  * 
- * You may also use isRaining to get a simple digital reading - is it raining or not?
+ * You may also use isMoist to get a simple digital reading - is the soil moist or not?
  * The threshold of this reading is adjusted by the small potentiometer on the board.
  * 
  * The LED on the board will turn off if the threshold is reached.
@@ -85,7 +85,7 @@ void loop()
     Serial.print(soilSensor.getResistance());
     Serial.println(" Ohm.");
 
-    // Print percentage of 'wetness' of sensor
+    // Print percentage of 'moistness' of sensor
     Serial.print("Moist percentage: ");
     Serial.print(soilSensor.getValue());
     Serial.println("%");

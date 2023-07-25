@@ -21,7 +21,7 @@
 
 // Define pins to use for A0 and D0
 // Make sure to change these so it suits your board
-#define SENSOR_A0_PIN A2
+#define SENSOR_A0_PIN 12
 #define SENSOR_D0_PIN 7
 
 /**
