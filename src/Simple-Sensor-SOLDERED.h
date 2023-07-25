@@ -35,7 +35,7 @@
 /**
  * Settings for the LED, to be sent via easyC
  */
-#define DEFAULT_TRESHOLD 50.0F
+#define DEFAULT_TRESHOLD       50.0F
 #define LED_ON_WHEN_THRESHOLD  0xFF
 #define LED_OFF_WHEN_THRESHOLD 0x00
 
