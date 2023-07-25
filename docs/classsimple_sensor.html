@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>16x2 easyC LCD Library: simpleSensor Class Reference</title>
+<title>Simple Sensors Arduino library: simpleSensor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">16x2 easyC LCD Library<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">Simple Sensors Arduino library<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">This is a library for the 16x2 easyC LCD Module</div>
+   <div id="projectbrief">A library for all the Simple Sensors by Soldered Electronics, regular and easyC versions.</div>
   </td>
  </tr>
  </tbody>
@@ -135,7 +135,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac0165c01dd0fbb4bd885dd4df8d69248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the threshold as a percentage. Only for easyC.  <br /></td></tr>
 <tr class="separator:ac0165c01dd0fbb4bd885dd4df8d69248"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a582b2146c4f59bea51071ca8a5e0d619"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimple_sensor.html#a582b2146c4f59bea51071ca8a5e0d619">getThreshold</a> ()</td></tr>
-<tr class="memdesc:a582b2146c4f59bea51071ca8a5e0d619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the percentage value of the threshold.  <br /></td></tr>
+<tr class="memdesc:a582b2146c4f59bea51071ca8a5e0d619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the percentage value of the threshold, only for easyC.  <br /></td></tr>
 <tr class="separator:a582b2146c4f59bea51071ca8a5e0d619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ab3b11b06087808eafa386ab3cd6732"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimple_sensor.html#a5ab3b11b06087808eafa386ab3cd6732">invertLED</a> (bool _invert)</td></tr>
 <tr class="memdesc:a5ab3b11b06087808eafa386ab3cd6732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert the LED on the breakout board.  <br /></td></tr>
@@ -185,8 +185,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aaa1b42b508a5fd29325217af4cdcde88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c6a567633d729ce6d0c91a56c6e6e76"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimple_sensor.html#a9c6a567633d729ce6d0c91a56c6e6e76">rawReadData</a></td></tr>
 <tr class="separator:a9c6a567633d729ce6d0c91a56c6e6e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47d1638c9dee96f9774b7cbaa8b2f4e5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimple_sensor.html#a47d1638c9dee96f9774b7cbaa8b2f4e5">rawThreshold</a> = ADC_MAX/2</td></tr>
+<tr class="memitem:a47d1638c9dee96f9774b7cbaa8b2f4e5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimple_sensor.html#a47d1638c9dee96f9774b7cbaa8b2f4e5">rawThreshold</a></td></tr>
 <tr class="separator:a47d1638c9dee96f9774b7cbaa8b2f4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2861eb25928cf2eebb82aa3ea24095dd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimple_sensor.html#a2861eb25928cf2eebb82aa3ea24095dd">treshold</a></td></tr>
+<tr class="separator:a2861eb25928cf2eebb82aa3ea24095dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78f687c2925aaeebc30e2e1bcd36a6b6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimple_sensor.html#a78f687c2925aaeebc30e2e1bcd36a6b6">adcWidthInBits</a></td></tr>
 <tr class="separator:a78f687c2925aaeebc30e2e1bcd36a6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfd83c6250ba4c9d0bb07d8b429a3960"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimple_sensor.html#abfd83c6250ba4c9d0bb07d8b429a3960">adcMaxVoltage</a></td></tr>
@@ -391,7 +393,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the percentage value of the threshold. </p>
+<p>Get the percentage value of the threshold, only for easyC. </p>
 <dl class="section return"><dt>Returns</dt><dd>float value of the set threshold </dd></dl>
 
 </div>
@@ -668,7 +670,29 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t simpleSensor::rawThreshold = ADC_MAX/2</td>
+          <td class="memname">uint16_t simpleSensor::rawThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2861eb25928cf2eebb82aa3ea24095dd" name="a2861eb25928cf2eebb82aa3ea24095dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2861eb25928cf2eebb82aa3ea24095dd">&#9670;&#160;</a></span>treshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float simpleSensor::treshold</td>
         </tr>
       </table>
   </td>
@@ -692,7 +716,7 @@ Additional Inherited Members</h2></td></tr>
     <ul>
         <li class="navelem"><a class="el" href="classsimple_sensor.html">simpleSensor</a></li>
         <li class="footer">
-            Generated on Mon Jul 24 2023 05:50:50 for 16x2 easyC LCD Library by <a href="http://www.doxygen.org/index.html">
+            Generated on Tue Jul 25 2023 10:43:57 for Simple Sensors Arduino library by <a href="http://www.doxygen.org/index.html">
                 <img class="footer" src="doxygen.png" alt="doxygen"
                     onerror="this.onerror=null;this.src='doxygen.svg';" /></a> 1.9.7.
             Dark theme by <a href="http://majerle.eu" target="_new">Tilen Majerle</a>. All rights reserved.

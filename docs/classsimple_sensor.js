@@ -19,5 +19,6 @@ var classsimple_sensor =
     [ "digitalPin", "classsimple_sensor.html#aaa1b42b508a5fd29325217af4cdcde88", null ],
     [ "highPercentage", "classsimple_sensor.html#ad77bb78b8628904c9f27dcb08ba6f6bd", null ],
     [ "rawReadData", "classsimple_sensor.html#a9c6a567633d729ce6d0c91a56c6e6e76", null ],
-    [ "rawThreshold", "classsimple_sensor.html#a47d1638c9dee96f9774b7cbaa8b2f4e5", null ]
+    [ "rawThreshold", "classsimple_sensor.html#a47d1638c9dee96f9774b7cbaa8b2f4e5", null ],
+    [ "treshold", "classsimple_sensor.html#a2861eb25928cf2eebb82aa3ea24095dd", null ]
 ];
