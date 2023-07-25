@@ -9,7 +9,7 @@
  *              -Connect the breakout to your Dasduino board according to the diagrams below
  *              -Open Serial monitor at 115200 baud!
  *
- *              Simple Soil Sensor: solde.red/333045
+ *              Simple Fire Sensor: solde.red/333047
  *              Dasduino Core: www.solde.red/333037
  *              Dasduino Connect: www.solde.red/333034
  *              Dasduino ConnectPlus: www.solde.red/333033
@@ -39,16 +39,15 @@
 /**
  * How it works:
  * 
- * This sensor works on the principle that humidity will short electrical
- * contacts on the board of the Fire sensor, thus, lowering the resistance.
- * Through this, a percentage can be calculated which indicates moistness of the soil.
+ * This sensor works on the principle that the IR LED will react to IR rays produced by a fire.
+ * The response of the IR LED will be reflected in a percentage.
  * 
  * You can use the function getValue() to get that percentage.
  * 
- * 0.00% represents no shorted contacts, so, no rain at all.
- * 100.0% represents fully shorted contacts - the board is fully wet, so, rain is detected.
+ * 0.00% represents no IR light affecting the sensor, so no fire.
+ * 100.00% reporesents a strong IR light affecting the sensor, so there's a fire.
  * 
- * You may also use isRaining to get a simple digital reading - is it raining or not?
+ * You may also use isFireDetected to get a simple digital reading - is there a fire or not?
  * The threshold of this reading is adjusted by the small potentiometer on the board.
  * 
  * The LED on the board will turn off if the threshold is reached.
@@ -83,7 +82,7 @@ void loop()
     // The resistance is calcualted through a constant
     Serial.print("Resistance: ");
     Serial.print(fireSensor.getResistance());
-    Serial.println("Ohm.");
+    Serial.println(" Ohm.");
 
     // Print percentage of the fire detection of sensor
     Serial.print("Fire detection: ");
@@ -92,7 +91,7 @@ void loop()
 
     // Print is a fire detected or not
     // Once again, you may adjust this threshold with the small potentiometer on the board
-    Serial.print("Is the soil moist? ");
+    Serial.print("Is there a fire detected? ");
     if(fireSensor.isFireDetected()) Serial.println("True!");
     else Serial.println("False!");
 

@@ -1,16 +1,35 @@
 ##################################################
-# Syntax Coloring Map For Obstacle-Sensor-SOLDERED
+# Syntax Coloring Map For Simple-Sensor-SOLDERED
 ##################################################
 
 ##################################################
 # Datatypes (KEYWORD1)
 ##################################################
 
+simpleLightSensor	KEYWORD1
+simpleFireSensor	KEYWORD1
+simpleSoilSensor	KEYWORD1
+simpleRainSensor	KEYWORD1
+
 ##################################################
 # Methods and Functions (KEYWORD2)
 ##################################################
 
 begin	KEYWORD2
+getRawReading	KEYWORD2
+getResistance	KEYWORD2
+getValue	KEYWORD2
+setRawThreshold	KEYWORD2
+getRawThreshold	KEYWORD2
+setThreshold	KEYWORD2
+getThreshold	KEYWORD2
+invertLED	KEYWORD2
+calibrate	KEYWORD2
+getDigitalPin	KEYWORD2
+isMoist	KEYWORD2
+isRaining	KEYWORD2
+isFireDetected	KEYWORD2
+isLightDetected	KEYWORD2
 
 ##################################################
 # Constants (LITERAL1)

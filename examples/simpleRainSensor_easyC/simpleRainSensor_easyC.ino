@@ -2,11 +2,11 @@
  **************************************************
  *
  * @file        simpleRainSensor_easyC.ino
- * @brief       Read all the values of the Simple Rain Sensor.
+ * @brief       Read all the values of the Simple Rain Sensor, easyC version.
  *              Also, see how to calibrate it!
  * 
  *              To successfully run the sketch:
- *              -Connect the breakout to your Dasduino board over easyC
+ *              -Connect the breakout to your Dasduino board via easyC
  *              -Open Serial monitor at 115200 baud!
  *
  *              Simple Rain Sensor easyC: solde.red/333043
@@ -29,25 +29,25 @@
  * You can use the function getValue() to get that percentage.
  * 
  * 0.00% represents no shorted contacts, so, no rain at all.
- * 100.0% represents fully shorted contacts - the board is fully wet, so, rain is detected.
+ * 100.00% represents fully shorted contacts - the sensor is fully wet, so, rain is detected.
  * 
  * You may also use isRaining to get a simple digital reading - is it raining or not?
- * The threshold of this reading is adjusted by the small potentiometer on the board.
+ * The threshold of this reading is adjusted by the setThreshold function.
  * 
  * The LED on the board will turn on if the threshold is reached.
  * If you want to invert this, use invertLED()
 */
 
-// Create the sensor object on the default address
+// Create the sensor object
 simpleRainSensor rainSensor;
 
 void setup()
 {
     Serial.begin(115200); // Begin Serial communication so we can see the output
-    
+
     rainSensor.begin(); // Init the Simple Rain Sensor
 
-    // If you're starting the sensor on a different address, note it here
+    // If you're starting the sensor on a different address, use this constructor
     //rainSensor.begin(0x32);
 
     // The default address is 0x30
@@ -64,15 +64,18 @@ void setup()
     // 0x36    | x | x |   |
     // 0x37    | x | x | x |
 
+    // Set the threshold for reading is it raining or not
+    rainSensor.setThreshold(35.5);
+
     // Sensor calibration isn't needed but it helps with getting more relevant readings.
     // To calibrate the sensor, first run this sketch with the line of code below commented:
-    //rainSensor.calibrate(65.5);
+    //rainSensor.calibrate(76.4);
 
-    // Place the sensor in water- so it's as wet as you're ever going to want to measure.
+    // Place the sensor in water - so it's as wet as you're ever going to want to measure.
     // Note the reading of the Rain percentage, and then write that value in the calibrate function.
     // What this does is essentially make the range of measurement smaller so the data you get is more relevant.
 
-    // Invert the LED on the board if you want
+    // Optionally, Invert the LED on the board
     //rainSensor.invertLED(true);
 }
 
@@ -80,14 +83,14 @@ void loop()
 {
     // Print the readings to Serial
 
-    // Raw reading is essentially a reading of the analog value on SENSOR_A0_PIN
+    // Raw reading is essentially a reading of the analog value on the easyC board
     Serial.print("Raw reading: ");
     Serial.println(rainSensor.getRawReading());
     
     // The resistance is calcualted through a constant
     Serial.print("Resistance: ");
     Serial.print(rainSensor.getResistance());
-    Serial.println("Ohm.");
+    Serial.println(" Ohm.");
 
     // Print percentage of rain detected on sensor
     Serial.print("Rain percentage: ");
@@ -95,8 +98,8 @@ void loop()
     Serial.println("%");
     
     // Print is it raining or not
-    // Once again, you may adjust this threshold with the small potentiometer on the board
-    Serial.print("Is raining? ");
+    // Once again, you may adjust this threshold with setThreshold
+    Serial.print("Is it raining? ");
     if(rainSensor.isRaining()) Serial.println("True!");
     else Serial.println("False!");
 

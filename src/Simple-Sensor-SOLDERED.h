@@ -35,6 +35,7 @@
 /**
  * Settings for the LED, to be sent via easyC
  */
+#define DEFAULT_TRESHOLD 50.0F
 #define LED_ON_WHEN_THRESHOLD  0xFF
 #define LED_OFF_WHEN_THRESHOLD 0x00
 
@@ -67,7 +68,8 @@ class simpleSensor : public EasyC
   private:
     uint8_t analogPin, digitalPin;
     uint8_t rawReadData;
-    uint16_t rawThreshold = ADC_MAX / 2; // Default threshold is 50%
+    uint16_t rawThreshold; // Default threshold is 50%
+    float treshold;
     uint8_t adcWidthInBits;
     float adcMaxVoltage;
     float highPercentage = 100.0; // Used for calibration

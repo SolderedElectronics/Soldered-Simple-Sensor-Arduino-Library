@@ -30,7 +30,6 @@ simpleSensor::simpleSensor(uint8_t _analogPin, uint8_t _digitalPin)
  */
 simpleSensor::simpleSensor()
 {
-    invertLED(false); // Set the default setting of the LED
 }
 
 /**
@@ -136,10 +135,6 @@ void simpleSensor::setRawThreshold(uint16_t _thresh)
 
         rawThreshold = _thresh;
 
-        Serial.println("RAW T RAW T");
-        Serial.println(rawThreshold);
-        Serial.println("RAW T RAW T");
-
         // Convert raw threshold value into 2 bytes for sending
         uint8_t *thresholdToSend = (uint8_t *)&rawThreshold;
 
@@ -167,6 +162,8 @@ uint16_t simpleSensor::getRawThreshold()
  */
 void simpleSensor::setThreshold(float _thresh)
 {
+    treshold = _thresh;
+
     if (!native)
     {
         // First, check if it's within the range
@@ -176,7 +173,7 @@ void simpleSensor::setThreshold(float _thresh)
         }
 
         // Convert to raw value
-        uint16_t newRawThreshold = _thresh * 0.01 * 1024;
+        uint16_t newRawThreshold = treshold * 0.01 * 1024 * (highPercentage * 0.01);
 
         // Set it
         setRawThreshold(newRawThreshold);
@@ -184,13 +181,18 @@ void simpleSensor::setThreshold(float _thresh)
 }
 
 /**
- * @brief                   Get the percentage value of the threshold.
+ * @brief                   Get the percentage value of the threshold, only for easyC.
  *
  * @returns                 float value of the set threshold
  */
 float simpleSensor::getThreshold()
 {
-    return (rawThreshold / float(1024)) * 100.0F;
+    if (!native)
+    {
+        return treshold;
+    }
+    else
+        return 0;
 }
 
 /**
@@ -247,6 +249,6 @@ void simpleSensor::calibrate(float _highPercentage)
 {
     highPercentage = _highPercentage;
 
-    // Also, set the threshold
-    setThreshold(getThreshold() * (highPercentage * 0.01));
+    // Also, set the threshold according to this
+    setThreshold(treshold);
 }

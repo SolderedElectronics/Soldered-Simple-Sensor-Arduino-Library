@@ -46,7 +46,7 @@
  * You can use the function getValue() to get that percentage.
  * 
  * 0.00% represents darkness.
- * 100.0% represents a bright light near the sensor.
+ * 100.00% represents a bright light near the sensor.
  * 
  * You may also use isLightDetected to get a simple digital reading - is light detected or not?
  * The threshold of this reading is adjusted by the small potentiometer on the board.
@@ -61,7 +61,7 @@ void setup()
 {
     Serial.begin(115200); // Begin Serial communication so we can see the output
     
-    lightSensor.begin(); // Init the Simple Light Humidity Sensor
+    lightSensor.begin(); // Init the Simple Light Sensor
 
     // Sensor calibration isn't needed but it helps with getting more relevant readings.
     // To calibrate the sensor, first run this sketch with the line of code below commented:
@@ -84,7 +84,7 @@ void loop()
     // The resistance is calcualted through a constant
     Serial.print("Resistance: ");
     Serial.print(lightSensor.getResistance());
-    Serial.println("Ohm.");
+    Serial.println(" Ohm.");
 
     // Print percentage of light detection of sensor
     Serial.print("Light detection: ");
