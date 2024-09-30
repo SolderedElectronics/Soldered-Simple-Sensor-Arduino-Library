@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['treshold_0',['treshold',['../classsimple_sensor.html#a2861eb25928cf2eebb82aa3ea24095dd',1,'simpleSensor']]]
+  ['open_20source_20license_0',['Open-source license',['../index.html#autotoc_md6',1,'']]]
 ];
