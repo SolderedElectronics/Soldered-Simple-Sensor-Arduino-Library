@@ -30,7 +30,7 @@
 /**
  * Resistance constant
  */
-#define R 10000
+#define RES 10000
 
 /**
  * Settings for the LED, to be sent via easyC

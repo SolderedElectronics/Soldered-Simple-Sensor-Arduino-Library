@@ -82,14 +82,14 @@ float simpleSensor::getResistance()
     {
         if (temp != 0)
         {
-            return R * (temp / (float)(ADC_MAX - temp));
+            return RES * (temp / (float)(ADC_MAX - temp));
         }
     }
     else
     {
         if (temp != 0)
         {
-            return R * (temp / (float)(1024 - temp));
+            return RES * (temp / (float)(1024 - temp));
         }
     }
     return 0;
