@@ -3,39 +3,39 @@
 [![Make docs and publish to GitHub Pages](https://github.com/SolderedElectronics/Soldered-Simple-Sensor-Arduino-Library/actions/workflows/make_docs.yml/badge.svg?branch=dev)](https://github.com/SolderedElectronics/Soldered-Simple-Sensor-Arduino-Library/actions/workflows/make_docs.yml)
 [![Arduino Library Manager Compatibility](https://github.com/SolderedElectronics/Soldered-Simple-Sensor-Arduino-Library/actions/workflows/arduino_lint.yml/badge.svg?branch=dev)](https://github.com/SolderedElectronics/Soldered-Simple-Sensor-Arduino-Library/actions/workflows/arduino_lint.yml)
 
-| ![Product name](https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg) |
+| ![Product name](https://docs.soldered.com/assets/images/333044-cca7ef181d2650318d111aedca93b296.jpg) |
 | :------------------------------------------------------------------------------------: |
 |                      [Simple Rain Sensor](https://www.solde.red/333044)                      |
 
-| ![Product name](https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg) |
+| ![Product name](https://docs.soldered.com/assets/images/333043-9ebd980041ff6633b371a25566da9376.jpg) |
 | :------------------------------------------------------------------------------------: |
-|                      [Simple Rain Sensor Board With easyC](https://www.solde.red/333043)                      |
+|                      [Simple Rain Sensor Board With Qwiic](https://www.solde.red/333043)                      |
 
-| ![Product name](https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg) |
+| ![Product name](https://docs.soldered.com/assets/images/333045-19688a68d076ab37f9f094e56d31f808.jpg) |
 | :------------------------------------------------------------------------------------: |
 |                      [Simple Soil Humidity Sensor](https://www.solde.red/333045)                      |
 
-| ![Product name](https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg) |
+| ![Product name](https://docs.soldered.com/assets/images/333040-425c758f4493da3094180f65f5434deb.jpg) |
 | :------------------------------------------------------------------------------------: |
-|                      [Simple Soil Humidity Sensor Board With easyC](https://www.solde.red/333040)                      |
+|                      [Simple Soil Humidity Sensor Board With Qwiic](https://www.solde.red/333040)                      |
 
-| ![Product name](https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg) |
+| ![Product name](https://docs.soldered.com/assets/images/333046-aa16168782b04ea9e5fbaf9081093ea7.jpg) |
 | :------------------------------------------------------------------------------------: |
 |                      [Simple Light Sensor](https://www.solde.red/333046)                      |
 
-| ![Product name](https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg) |
+| ![Product name](https://docs.soldered.com/assets/images/333041-87123e917b3785df80952bde45d226a6.jpg) |
 | :------------------------------------------------------------------------------------: |
-|                      [Simple Light Sensor Board With easyC](https://www.solde.red/333041)                      |
+|                      [Simple Light Sensor Board With Qwiic](https://www.solde.red/333041)                      |
 
-| ![Product name](https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg) |
+| ![Product name](https://docs.soldered.com/assets/images/333047-85673f8fb457d4e9b09f7979458f0e36.jpg) |
 | :------------------------------------------------------------------------------------: |
 |                      [Simple Fire Sensor](https://www.solde.red/333047)                      |
 
-| ![Product name](https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg) |
+| ![Product name](https://docs.soldered.com/assets/images/333042-e5bfb68344c3a1267e543d4083fed879.jpg) |
 | :------------------------------------------------------------------------------------: |
-|                      [Simple Fire Sensor Board With easyC](https://www.solde.red/333042)                      |
+|                      [Simple Fire Sensor Board With Qwiic](https://www.solde.red/333042)                      |
 
-OPIS PROIZVODA + LINK NA [easyC ecosystem](https://www.soldered.com/en/easyC).
+OPIS PROIZVODA + LINK NA [Qwiic ecosystem](https://www.soldered.com/en/Qwiic).
 
 ### Repository Contents
 
@@ -45,7 +45,7 @@ OPIS PROIZVODA + LINK NA [easyC ecosystem](https://www.soldered.com/en/easyC).
 
 ### Hardware design
 
-You can find hardware design for this board in _Simple Rain Sensor_, _Simple Rain Sensor Board With easyC_, _Simple Soil Humidity Sensor_, _Simple Soil Humidity Sensor Board With easyC_, _Simple Light Sensor_, _Simple Light Sensor Board With easyC_, _Simple Fire Sensor_, _Simple Fire Sensor Board With easyC_ hardware repositories.
+You can find hardware design for this board in _Simple Rain Sensor_, _Simple Rain Sensor Board With Qwiic_, _Simple Soil Humidity Sensor_, _Simple Soil Humidity Sensor Board With Qwiic_, _Simple Light Sensor_, _Simple Light Sensor Board With Qwiic_, _Simple Fire Sensor_, _Simple Fire Sensor Board With Qwiic_ hardware repositories.
 
 ### Documentation
 
